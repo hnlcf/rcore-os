@@ -1,0 +1,11 @@
+# Editor config
+.vscode/
+.idea/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+
+# Rust ignore
+**/target
+**/Cargo.lock
+**/*.rs.bk
