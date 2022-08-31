@@ -4,6 +4,7 @@
 mod console;
 mod lang_item;
 mod sys;
+mod sbi;
 
 use crate::console::*;
 use crate::sys::*;
