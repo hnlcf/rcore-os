@@ -1,5 +1,4 @@
 /// This file re-implement the system panic
-use crate::console::*;
 use crate::println;
 use crate::sbi::shutdown;
 use core::panic::PanicInfo;
