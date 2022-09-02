@@ -5,7 +5,6 @@ struct Stdout;
 
 impl Write for Stdout {
     fn write_str(&mut self, s: &str) -> core::fmt::Result {
-        // sys_write(1, s.as_bytes());
         for ch in s.chars() {
             console_putchar(ch as usize);
         }
