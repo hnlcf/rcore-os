@@ -49,4 +49,4 @@ clean:
 	@rm -rf target/
 
 format:
-	@$(CARGO) $(FMT)
+	@$(CARGO) $(FMT) --all -- --check
