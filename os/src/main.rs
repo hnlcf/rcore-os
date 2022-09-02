@@ -6,7 +6,6 @@ mod console;
 mod lang_item;
 mod sbi;
 
-use crate::console::*;
 use core::arch::global_asm;
 global_asm!(include_str!("entry.asm"));
 
