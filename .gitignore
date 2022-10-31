@@ -12,3 +12,4 @@
 
 # GDB record
 **/.gdb*
+**/.bps*

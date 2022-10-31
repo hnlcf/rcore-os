@@ -7,12 +7,13 @@ mod lang_item;
 mod sbi;
 
 use core::arch::global_asm;
+
 global_asm!(include_str!("entry.asm"));
 
 #[no_mangle]
 pub fn rust_main() -> ! {
     clear_bss();
-    println!("Hello World!");
+    println!("Hello, World!");
     panic!("Shutdown machine!");
 }
 

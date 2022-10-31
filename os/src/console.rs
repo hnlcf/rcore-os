@@ -12,6 +12,7 @@ impl Write for Stdout {
     }
 }
 
+/// Format output, implementing core function of `println!` macro
 pub fn print(args: core::fmt::Arguments) {
     Stdout.write_fmt(args).unwrap();
 }

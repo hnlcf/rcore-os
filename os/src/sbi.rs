@@ -1,3 +1,6 @@
+//! RustSBI service
+//!
+//! Response to the requests of kernel
 #![allow(unused)]
 
 use core::arch::asm;
@@ -12,6 +15,7 @@ const SBI_REMOTE_SFENCE_VMA: usize = 6;
 const SBI_REMOTE_SFENCE_VMA_ASID: usize = 7;
 const SBI_SHUTDOWN: usize = 8;
 
+/// Invoke sbi service
 #[inline(always)]
 fn sbi_call(which: usize, arg0: usize, arg1: usize, arg2: usize) -> usize {
     let mut ret;
@@ -27,10 +31,12 @@ fn sbi_call(which: usize, arg0: usize, arg1: usize, arg2: usize) -> usize {
     ret
 }
 
+/// Output character to screen
 pub fn console_putchar(ch: usize) {
     sbi_call(SBI_CONSOLE_PUTCHAR, ch, 0, 0);
 }
 
+/// Shutdown service
 pub fn shutdown() -> ! {
     sbi_call(SBI_SHUTDOWN, 0, 0, 0);
     panic!("It's shutdown now");
