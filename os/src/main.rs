@@ -10,6 +10,8 @@ mod console;
 mod lang_item;
 mod sbi;
 mod sync;
+mod syscall;
+mod trap;
 
 use core::arch::global_asm;
 
@@ -19,8 +21,10 @@ global_asm!(include_str!("link_app.S"));
 #[no_mangle]
 pub fn rust_main() -> ! {
     clear_bss();
-    println!("Hello, World!");
-    panic!("Shutdown machine!");
+    println!("[kernel] Hello, world!");
+    trap::init();
+    batch::init();
+    batch::run_next_app();
 }
 
 /// Clear bss section

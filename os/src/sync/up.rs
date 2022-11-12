@@ -14,7 +14,7 @@ impl<T> UPSafeCell<T> {
     }
 
     /// Get mutable reference of wrappered value
-    pub fn exclusive(&self) -> RefMut<'_, T> {
+    pub fn exclusive_access(&self) -> RefMut<'_, T> {
         self.inner.borrow_mut()
     }
 }
